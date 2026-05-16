@@ -241,10 +241,13 @@ window.onload = () => {
 };
 
 async function generateMessage() {
+
   const motherName = document.getElementById("motherName").value;
   const userName = document.getElementById("userName").value;
   const traits = document.getElementById("traits").value;
   const memory = document.getElementById("memory").value;
+
+  document.getElementById("previewMessage").innerText = "Gerando mensagem...";
 
   try {
     const response = await fetch("http://127.0.0.1:8000/generate", {

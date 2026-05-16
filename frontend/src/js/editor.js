@@ -208,3 +208,8 @@ function nextStep() {
     showStep(currentStep + 1);
   }
 }
+
+window.onload = () => {
+  document.querySelector(".card-background").style.backgroundImage =
+    "url('../../assets/backgrounds/background1.png')";
+};

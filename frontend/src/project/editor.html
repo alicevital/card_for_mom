@@ -42,8 +42,8 @@
             type="text"
             id="motherName"
             placeholder="Ex: Laura"
+            oninput="updatePreview()"
           />
-
         </div>
 
         <div class="input-group">
@@ -56,6 +56,7 @@
             type="text"
             id="userName"
             placeholder="Ex: Alice"
+            oninput="updatePreview()"
           />
 
         </div>
@@ -106,7 +107,7 @@
 
         <div
             class="background-option"
-            onclick="changeBackground('background1.png')"
+            onclick="changeBackground(this,'background1.png')"
         >
             <img src="../../assets/backgrounds/background1.png" />
         </div>
@@ -218,383 +219,32 @@
 
       </div>
 
-      <!-- STEP 3 -->
-      <div class="step" id="step3">
-
-      <div class="avatar-section">
-
-        <!-- SKINS -->
-
-        <h3>Peles</h3>
-
-        <div class="avatar-grid skins-grid">
-
-          <img
-            src="../../assets/avatar/skins/skin1.png"
-            onclick="changeSkin(this, 'skin1.png')"
-          />
-
-          <img
-            src="../../assets/avatar/skins/skin2.png"
-            onclick="changeSkin(this, 'skin2.png')"
-          />
-
-          <img
-            src="../../assets/avatar/skins/skin3.png"
-            onclick="changeSkin(this, 'skin3.png')"
-          />
-          <img
-            src="../../assets/avatar/skins/skin4.png"
-            onclick="changeSkin(this, 'skin4.png')"
-          />
-
-        </div>
-
-
-        <!-- HAIRS -->
-
-        <h3>Cabelos</h3>
-
-        <div class="avatar-grid hairs-grid">
-
-          <img
-            src="../../assets/avatar/hairs/long_hair1.png"
-            onclick="changeHair(this, 'long_hair1.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/long_hair2.png"
-            onclick="changeHair(this, 'long_hair2.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/long_hair3.png"
-            onclick="changeHair(this, 'long_hair3.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/long_hair4.png"
-            onclick="changeHair(this, 'long_hair4.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/long_hair5.png"
-            onclick="changeHair(this, 'long_hair5.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/long_hair6.png"
-            onclick="changeHair(this, 'long_hair6.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/straight_hair1.png"
-            onclick="changeHair(this, 'straight_hair1.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/straight_hair2.png"
-            onclick="changeHair(this, 'straight_hair2.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/straight_hair3.png"
-            onclick="changeHair(this, 'straight_hair3.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/straight_hair4.png"
-            onclick="changeHair(this, 'straight_hair4.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/straight_hair5.png"
-            onclick="changeHair(this, 'straight_hair5.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/straight_hair6.png"
-            onclick="changeHair(this, 'straight_hair6.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/topknot_hair1.png"
-            onclick="changeHair(this, 'topknot_hair1.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/topknot_hair2.png"
-            onclick="changeHair(this, 'topknot_hair2.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/topknot_hair3.png"
-            onclick="changeHair(this, 'topknot_hair3.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/topknot_hair4.png"
-            onclick="changeHair(this, 'topknot_hair4.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/topknot_hair5.png"
-            onclick="changeHair(this, 'topknot_hair5.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/topknot_hair6.png"
-            onclick="changeHair(this, 'topknot_hair6.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/wavy_hair1.png"
-            onclick="changeHair(this, 'wavy_hair1.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/wavy_hair2.png"
-            onclick="changeHair(this, 'wavy_hair2.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/wavy_hair3.png"
-            onclick="changeHair(this, 'wavy_hair3.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/wavy_hair4.png"
-            onclick="changeHair(this, 'wavy_hair4.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/wavy_hair5.png"
-            onclick="changeHair(this, 'wavy_hair5.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/wavy_hair6.png"
-            onclick="changeHair(this, 'wavy_hair6.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/short_hair1.png"
-            onclick="changeHair(this, 'short_hair1.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/short_hair2.png"
-            onclick="changeHair(this, 'short_hair2.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/short_hair3.png"
-            onclick="changeHair(this, 'short_hair3.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/short_hair4.png"
-            onclick="changeHair(this, 'short_hair4.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/short_hair5.png"
-            onclick="changeHair(this, 'short_hair5.png')"
-          />
-
-          <img
-            src="../../assets/avatar/hairs/short_hair6.png"
-            onclick="changeHair(this, 'short_hair6.png')"
-          />
-        </div>
-
-
-        <!-- FACES -->
-
-        <h3>Faces</h3>
-
-        <div class="avatar-grid faces-grid">
-
-          <img
-            src="../../assets/avatar/faces/face3.png"
-            onclick="changeFace(this, 'face3.png')"
-          />
-
-          <img
-            src="../../assets/avatar/faces/face1.png"
-            onclick="changeFace(this, 'face1.png')"
-          />
-
-          <img
-            src="../../assets/avatar/faces/face4.png"
-            onclick="changeFace(this, 'face4.png')"
-          />
-
-          <img
-            src="../../assets/avatar/faces/face2.png"
-            onclick="changeFace(this, 'face2.png')"
-          />
-
-          <img
-            src="../../assets/avatar/faces/face5.png"
-            onclick="changeFace(this, 'face5.png')"
-          />
-
-          <img
-            src="../../assets/avatar/faces/face6.png"
-            onclick="changeFace(this, 'face6.png')"
-          />
-
-          <img
-            src="../../assets/avatar/faces/face7.png"
-            onclick="changeFace(this, 'face7.png')"
-          />
-
-          <img
-            src="../../assets/avatar/faces/face8.png"
-            onclick="changeFace(this, 'face8.png')"
-          />
-
-          <img
-            src="../../assets/avatar/faces/face9.png"
-            onclick="changeFace(this, 'face9.png')"
-          />
-
-          <img
-            src="../../assets/avatar/faces/face10.png"
-            onclick="changeFace(this, 'face10.png')"
-          />
-
-          <img
-            src="../../assets/avatar/faces/freckles.png"
-            onclick="changeFace(this, 'freckles.png')"
-          />
-
-        </div>
-
-
-        <!-- ACCESSORIES -->
-
-        <h3>Acessórios</h3>
-
-                <h4>Acessórios de cabeça</h4>
-
-        <div class="avatar-grid head-grid">
-
-          <img
-            src="../../assets/avatar/accessories/head/bowclip_pink.png"
-            onclick="changeHeadAccessory(this, 'bowclip_pink.png')"
-          />
-
-          <img
-            src="../../assets/avatar/accessories/head/bowclip_purple.png"
-            onclick="changeHeadAccessory(this, 'bowclip_purple.png')"
-          />
-
-          <img
-            src="../../assets/avatar/accessories/head/cap_green.png"
-            onclick="changeHeadAccessory(this, 'cap_green.png')"
-          />
-
-          <img
-            src="../../assets/avatar/accessories/head/cap_pink.png"
-            onclick="changeHeadAccessory(this, 'cap_pink.png')"
-          />
-
-          <img
-            src="../../assets/avatar/accessories/head/crown.png"
-            onclick="changeHeadAccessory(this, 'crown.png')"
-          />
-
-          <img
-            src="../../assets/avatar/accessories/head/earrings1.png"
-            onclick="changeHeadAccessory(this, 'earrings1.png')"
-          />
-
-          <img
-            src="../../assets/avatar/accessories/head/earrings2.png"
-            onclick="changeHeadAccessory(this, 'earrings2.png')"
-          />
-
-          <img
-            src="../../assets/avatar/accessories/head/glass.png"
-            onclick="changeHeadAccessory(this, 'glass.png')"
-          />
-
-          <img
-            src="../../assets/avatar/accessories/head/ribbon_purple.png"
-            onclick="changeHeadAccessory(this, 'ribbon_purple.png')"
-          />
-
-          <img
-            src="../../assets/avatar/accessories/head/ribbon_red.png"
-            onclick="changeHeadAccessory(this, 'ribbon_red.png')"
-          />
-
-          <img
-            src="../../assets/avatar/accessories/head/ribbon_yellow.png"
-            onclick="changeHeadAccessory(this, 'ribbon_yellow.png')"
-          />
-
-          </div>
-
-          <h4>Acessórios de pescoço</h4>
-
-          <div class="avatar-grid neck-grid">
-
-
-          <img
-            src="../../assets/avatar/accessories/neck/necklace_black.png"
-            onclick="changeNeckAccessory(this, 'necklace_black.png')"
-          />
-
-          <img
-            src="../../assets/avatar/accessories/neck/necklace_silver.png"
-            onclick="changeNeckAccessory(this, 'necklace_silver.png')"
-          />
-
-          <img
-            src="../../assets/avatar/accessories/neck/necklace_gold.png"
-            onclick="changeNeckAccessory(this, 'necklace_gold.png')"
-          />
-
-          </div>
-
-          <h4>Camisas</h4>
-
-          <div class="avatar-grid shirts-grid">
-
-          <img
-            src="../../assets/avatar/accessories/tshirts/tshirt_black.png"
-            onclick="changeShirt(this, 'tshirt_black.png')"
-          />
-
-          <img
-            src="../../assets/avatar/accessories/tshirts/tshirt_white.png"
-            onclick="changeShirt(this, 'tshirt_white.png')"
-          />
-
-          <img
-            src="../../assets/avatar/accessories/tshirts/tshirt_pink.png"
-            onclick="changeShirt(this, 'tshirt_pink.png')"
-          />
-
-          <img
-            src="../../assets/avatar/accessories/tshirts/tshirt_blue.png"
-            onclick="changeShirt(this, 'tshirt_blue.png')"
-          />
-
-          <img
-            src="../../assets/avatar/accessories/tshirts/tshirt_red.png"
-            onclick="changeShirt(this, 'tshirt_red.png')"
-          />
-        </div>
-
-        </div>
-
-</div>
+    <!-- STEP 3 -->
+    <div class="step" id="step3">
+
+      <h1>Escolha um avatar</h1>
+
+      <div class="avatar-grid avatars-grid">
+
+        <img src="../../assets/avatar/avatar1.png" onclick="changeAvatar(this, 'avatar1.png')" />
+        <img src="../../assets/avatar/avatar2.png" onclick="changeAvatar(this, 'avatar2.png')" />
+        <img src="../../assets/avatar/avatar3.png" onclick="changeAvatar(this, 'avatar3.png')" />
+        <img src="../../assets/avatar/avatar4.png" onclick="changeAvatar(this, 'avatar4.png')" />
+        <img src="../../assets/avatar/avatar5.png" onclick="changeAvatar(this, 'avatar5.png')" />
+        <img src="../../assets/avatar/avatar6.png" onclick="changeAvatar(this, 'avatar6.png')" />
+        <img src="../../assets/avatar/avatar7.png" onclick="changeAvatar(this, 'avatar7.png')" />
+        <img src="../../assets/avatar/avatar8.png" onclick="changeAvatar(this, 'avatar8.png')" />
+        <img src="../../assets/avatar/avatar9.png" onclick="changeAvatar(this, 'avatar9.png')" />
+        <img src="../../assets/avatar/avatar10.png" onclick="changeAvatar(this, 'avatar10.png')" />
 
       </div>
+
+      <div class="buttons">
+        <button onclick="previousStep()">Voltar</button>
+        <button onclick="nextStep()">Avançar</button>
+      </div>
+
+    </div>
 
       <!-- STEP 4 -->
       <div class="step" id="step4">
@@ -619,38 +269,8 @@
         <div class="card-background"></div>
 
         <div class="avatar">
-
-          <img
-            id="skin"
-            class="layer skin-layer"
-          />
-
-          <img
-            id="face"
-            class="layer face-layer"
-          />
-
-          <img
-            id="hair"
-            class="layer hair-layer"
-          />
-
-          <img
-            id="accessoryHead"
-            class="layer accessory-head-layer"
-          />
-
-          <img
-            id="accessoryNeck"
-            class="layer accessory-neck-layer"
-          />
-
-          <img
-            id="shirt"
-            class="layer shirt-layer"
-          />
-
-        </div>
+        <img id="avatarPreview" />
+       </div>
 
         <div class="card-content">
 

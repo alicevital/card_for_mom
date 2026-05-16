@@ -166,10 +166,15 @@ function changeHair(element, hairName) {
 
 }
 
+// função de escolher avatar
 function changeAvatar(element, avatarName) {
 
-  document.getElementById("avatarPreview").src =
-    `../../assets/avatar/${avatarName}`;
+  const avatar = document.getElementById("avatarPreview");
+
+  avatar.src = `../../assets/avatar/${avatarName}`;
+
+  // MOSTRA avatar
+  avatar.style.display = "block";
 
   // remove seleção
   document
@@ -180,6 +185,20 @@ function changeAvatar(element, avatarName) {
 
   // adiciona seleção
   element.classList.add("selected");
+}
+
+function removeAvatar() {
+  const avatar = document.getElementById("avatarPreview");
+
+  avatar.src = "";
+  avatar.style.display = "none";
+
+  // remove seleção dos outros
+  document
+    .querySelectorAll(".avatars-grid img")
+    .forEach((img) => {
+      img.classList.remove("selected");
+    });
 }
 
 console.log("teste");

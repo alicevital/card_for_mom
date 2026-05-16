@@ -456,3 +456,42 @@ button:hover {
   transform: scale(1.1);
 }
 
+#avatarPreview {
+  display: none;
+}
+
+.no-avatar-btn {
+  margin-bottom: 16px;
+
+  background: #eee;
+  color: #333;
+
+  border-radius: 10px;
+  padding: 10px 16px;
+
+  cursor: pointer;
+}
+
+.avatar-option {
+  width: 100%;
+  height: 110px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff7f8;
+  border-radius: 18px;
+
+  cursor: pointer;
+
+  border: 3px solid transparent;
+
+  transition: 0.3s;
+
+  font-weight: 500;
+}
+
+.avatar-option.selected {
+  border-color: #ff6b81;
+}

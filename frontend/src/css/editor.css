@@ -196,7 +196,6 @@ button:hover {
 
 /* CARTÃO */
 
-
 .card-preview {
   width: 100%;
 
@@ -223,6 +222,7 @@ button:hover {
 /* BACKGROUND */
 
 .card-background {
+
   position: absolute;
 
   inset: 0;
@@ -232,8 +232,6 @@ button:hover {
   background-position: center;
 
   z-index: 1;
-
-  background-image: url('../assets/backgrounds/background1.png');
 }
 
 
@@ -250,15 +248,17 @@ button:hover {
 /* AVATAR */
 
 .avatar {
-  position: relative;
-
-  width: 220px;
-
-  height: 220px;
-
+  width: 180px;
+  height: 180px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
 
-  margin-top: 250px;
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .avatar-grid {
@@ -293,26 +293,13 @@ button:hover {
 
 /* CAMADAS DO AVATAR */
 
-.avatar img {
-  position: absolute;
-
-  width: 100%;
-
-  left: 0;
-
-  top: 0;
-}
-
 
 /* CONTEÚDO */
 
 .card-content {
   position: relative;
-
-  z-index: 2;
-
+  z-index: 3;
   flex: 1;
-
   padding-left: 30px;
 }
 

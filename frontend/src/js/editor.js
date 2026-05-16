@@ -225,10 +225,47 @@ function nextStep() {
 
   if (currentStep < 4) {
     showStep(currentStep + 1);
+
+    if (currentStep + 1 ===4){
+      generateMessage();
+    }
   }
 }
+
+
+// preview do fundo do card 
 
 window.onload = () => {
   document.querySelector(".card-background").style.backgroundImage =
     "url('../../assets/backgrounds/background1.png')";
 };
+
+async function generateMessage() {
+  const motherName = document.getElementById("motherName").value;
+  const userName = document.getElementById("userName").value;
+  const traits = document.getElementById("traits").value;
+  const memory = document.getElementById("memory").value;
+
+  try {
+    const response = await fetch("http://127.0.0.1:8000/generate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        motherName,
+        userName,
+        traits,
+        memory,
+      }),
+    });
+
+    const data = await response.json();
+
+    document.getElementById("previewMessage").innerText = data.message;
+
+  } catch (error) {
+    console.error("Erro:", error);
+    alert("Erro ao gerar mensagem");
+  }
+}

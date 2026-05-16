@@ -11,11 +11,8 @@
 
 body {
   min-height: 100vh;
-
   background: #fff7f8;
-
   font-family: 'Poppins', sans-serif;
-
   color: #333;
 }
 
@@ -24,7 +21,6 @@ body {
 
 .editor-layout {
   display: flex;
-
   min-height: 100vh;
 }
 
@@ -33,15 +29,10 @@ body {
 
 .editor-panel {
   width: 45%;
-
   padding: 60px;
-
   background: white;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 }
 
@@ -50,9 +41,7 @@ body {
 
 .step {
   display: none;
-
   width: 100%;
-
   max-width: 500px;
 }
 
@@ -66,11 +55,8 @@ body {
 
 .step h1 {
   font-size: 42px;
-
   line-height: 1.2;
-
   margin-bottom: 12px;
-
   font-family: Arial, Helvetica, sans-serif
 }
 
@@ -79,9 +65,7 @@ body {
 
 .step p {
   color: #666;
-
   margin-bottom: 32px;
-
   line-height: 1.6;
 }
 
@@ -97,9 +81,7 @@ body {
 
 .input-group label {
   display: block;
-
   margin-bottom: 10px;
-
   font-weight: 500;
 }
 
@@ -109,131 +91,72 @@ body {
 input,
 textarea {
   width: 100%;
-
   padding: 16px;
-
   border: 1px solid #e5e5e5;
-
   border-radius: 16px;
-
   font-size: 16px;
-
   font-family: 'Poppins', sans-serif;
-
   outline: none;
-
   transition: 0.3s;
 }
 
-
-/* TEXTAREA */
-
 textarea {
   resize: none;
-
   min-height: 120px;
 }
-
-
-/* FOCUS */
 
 input:focus,
 textarea:focus {
   border-color: #ff6b81;
 }
 
-
-/* BOTÃO */
-
 button {
   width: 100%;
-
   padding: 18px;
-
   border: none;
-
   border-radius: 999px;
-
   background: #ff6b81;
-
   color: white;
-
   font-size: 16px;
-
   font-weight: bold;
-
   cursor: pointer;
-
   transition: 0.3s;
 }
 
-
-/* HOVER */
-
 button:hover {
   transform: translateY(-3px);
-
   opacity: 0.9;
 }
 
-
-/* PAINEL DIREITO */
-
 .preview-panel {
   flex: 1;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   padding: 40px;
-
   overflow: hidden;
 }
-
-
-/* CARTÃO */
 
 .card-preview {
   width: 100%;
-
   max-width: 900px;
-
   aspect-ratio: 16 / 9;
-
   background: white;
-
   position: relative;
-
   overflow: hidden;
-
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   padding: 40px;
 }
 
-/* BACKGROUND */
-
 .card-background {
-
   position: absolute;
-
   inset: 0;
-
   background-size: cover;
-
   background-position: center;
-
   z-index: 1;
 }
-
 
 .background-grid::-webkit-scrollbar {
   height: 8px;
@@ -241,11 +164,8 @@ button:hover {
 
 .background-grid::-webkit-scrollbar-thumb {
   background: #ff6b81;
-
   border-radius: 999px;
 }
-
-/* AVATAR */
 
 .avatar {
   width: 180px;
@@ -263,38 +183,22 @@ button:hover {
 
 .avatar-grid {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   gap: 14px;
-
   margin-bottom: 24px;
 }
 
 .avatar-grid img {
   width: 100%;
-
   height: 110px;
-
   object-fit: contain;
-
   background: #fff7f8;
-
   border-radius: 18px;
-
   cursor: pointer;
-
   border: 3px solid transparent;
-
   transition: 0.3s;
-
   padding: 8px;
 }
-
-/* CAMADAS DO AVATAR */
-
-
-/* CONTEÚDO */
 
 .card-content {
   position: relative;
@@ -303,75 +207,47 @@ button:hover {
   padding-left: 30px;
 }
 
-/* NOME DA MÃE */
-
 .card-content h2 {
   font-size: 36px;
-
   margin-bottom: 20px;
-
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
-/* MENSAGEM */
-
 .card-content p {
   line-height: 1.8;
-
   color: #444;
-
   margin-bottom: 24px;
 }
 
-
-/* ASSINATURA */
-
 .card-content span {
   font-weight: 600;
-
   color: #ff6b81;
 }
 
-
 .background-grid {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   gap: 18px;
-
   margin-top: 100px;
-
   margin-bottom: 30px;
-
   max-height: 500px;
-
   overflow-y: auto;
-
   padding-right: 10px;
 }
 
 
 .background-option {
   min-width: 280px;
-
   cursor: pointer;
-
   overflow: hidden;
-
   transition: 0.3s;
-
   flex-shrink: 0;
 }
 
 .background-option img {
   width: 100%;
-
   height: 180px;
-
   object-fit: cover;
-
   display: block;
 }
 
@@ -386,73 +262,52 @@ button:hover {
 
 .editor-panel {
   width: 45%;
-
   padding: 60px;
-
   background: white;
-
   overflow-y: auto;
 }
 
 .step {
   width: 100%;
-
   max-width: 700px;
-
   margin: 0 auto;
 }
 
 .layer {
   position: absolute;
-
   width: 100%;
-
   left: 0;
 
 }
 
-
 .skin-layer {
   top: 0;
-
   z-index: 1;
 }
 
 .face-layer {
-
   top: 0;
-
-
   z-index: 2;
 }
 
 .hair-layer {
   top: -18px;
-
   z-index: 3;
 }
 
-
 .accessory-head-layer {
-
   top: -10px;
-
   z-index: 4;
 }
 
 .accessory-neck-layer {
-
   top: 10px;
-
   z-index: 5;
 }
 
 .shirt-layer {
-
   top: 90px;
-
   z-index: 0;
-
   transform: scale(1.1);
 }
 
@@ -462,33 +317,24 @@ button:hover {
 
 .no-avatar-btn {
   margin-bottom: 16px;
-
   background: #eee;
   color: #333;
-
   border-radius: 10px;
   padding: 10px 16px;
-
   cursor: pointer;
 }
 
 .avatar-option {
   width: 100%;
   height: 110px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: #fff7f8;
   border-radius: 18px;
-
   cursor: pointer;
-
   border: 3px solid transparent;
-
   transition: 0.3s;
-
   font-weight: 500;
 }
 

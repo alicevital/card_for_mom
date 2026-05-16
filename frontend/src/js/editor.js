@@ -50,6 +50,34 @@ function previousStep() {
 
 }
 
+// =========================
+// VALIDAÇÃO DO FORM
+// =========================
+
+function validateForm() { // validações para a IA não alucinar
+  const motherName = document.getElementById("motherName").value.trim();
+  const userName = document.getElementById("userName").value.trim();
+  const traits = document.getElementById("traits").value.trim();
+  const memory = document.getElementById("memory").value.trim();
+
+  if (!motherName || !userName || !traits || !memory) {
+    alert("Preencha todos os campos!");
+    return false;
+  }
+
+  if (traits.length < 5) {
+    alert("Descreva melhor as características.");
+    return false;
+  }
+
+  if (memory.length < 10) {
+    alert("Conte uma memória mais detalhada.");
+    return false;
+  }
+
+  return true;
+}
+
 function changeBackground(element, backgroundName) {
 
   // TROCA O BACKGROUND
@@ -138,136 +166,45 @@ function changeHair(element, hairName) {
 
 }
 
+function changeAvatar(element, avatarName) {
 
-// =========================
-// FACE
-// =========================
+  document.getElementById("avatarPreview").src =
+    `../../assets/avatar/${avatarName}`;
 
-function changeFace(element, faceName) {
-
-  // TROCA IMAGEM
-
-  document.getElementById(
-    "face"
-  ).src =
-    `../../assets/avatar/faces/${faceName}`;
-
-
-  // REMOVE SELECTED
-
+  // remove seleção
   document
-    .querySelectorAll(
-      ".faces-grid img"
-    )
+    .querySelectorAll(".avatars-grid img")
     .forEach((img) => {
       img.classList.remove("selected");
     });
 
-
-  // ADICIONA SELECTED
-
+  // adiciona seleção
   element.classList.add("selected");
-
-}
-
-
-// =========================
-// ACCESSORY
-// =========================
-
-// =========================
-// HEAD ACCESSORY
-// =========================
-
-function changeHeadAccessory(element, accessoryName) {
-
-  // TROCA IMAGEM
-
-  document.getElementById(
-    "accessoryHead"
-  ).src =
-    `../../assets/avatar/accessories/head/${accessoryName}`;
-
-
-  // REMOVE SELECTED
-
-  document
-    .querySelectorAll(
-      ".head-grid img"
-    )
-    .forEach((img) => {
-      img.classList.remove("selected");
-    });
-
-
-  // ADICIONA SELECTED
-
-  element.classList.add("selected");
-
-}
-
-// =========================
-// NECK ACCESSORY
-// =========================
-
-function changeNeckAccessory(element, accessoryName) {
-
-  // TROCA IMAGEM
-
-  document.getElementById(
-    "accessoryNeck"
-  ).src =
-    `../../assets/avatar/accessories/neck/${accessoryName}`;
-
-
-  // REMOVE SELECTED
-
-  document
-    .querySelectorAll(
-      ".neck-grid img"
-    )
-    .forEach((img) => {
-      img.classList.remove("selected");
-    });
-
-
-  // ADICIONA SELECTED
-
-  element.classList.add("selected");
-
-}
-
-// =========================
-// SHIRTS
-// =========================
-
-function changeShirt(element, shirtName) {
-
-  // TROCA IMAGEM
-
-  document.getElementById(
-    "shirt"
-  ).src =
-    `../../assets/avatar/accessories/tshirts/${shirtName}`;
-
-      console.log(path);
-  // REMOVE SELECTED
-
-  document
-    .querySelectorAll(
-      ".shirts-grid img"
-    )
-    .forEach((img) => {
-      img.classList.remove("selected");
-    });
-
-
-  // ADICIONA SELECTED
-
-  element.classList.add("selected");
-
 }
 
 console.log("teste");
 
 document.getElementById("accessoryHead")
+
+// nome da mãe e do autor no preview
+
+function updatePreview() {
+  const motherName = document.getElementById("motherName").value;
+  const userName = document.getElementById("userName").value;
+
+  document.getElementById("previewMotherName").innerText =
+    motherName || "Mamãe";
+
+  document.getElementById("previewUserName").innerText =
+    userName ? `Com amor, ${userName}` : "Com amor.";
+}
+
+// validação para próximo step
+
+function nextStep() {
+  if (currentStep === 1 && !validateForm()) return;
+
+  if (currentStep < 4) {
+    showStep(currentStep + 1);
+  }
+}

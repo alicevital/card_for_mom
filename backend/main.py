@@ -1,16 +1,19 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-import os
+
+from groq import Groq
+
 from dotenv import load_dotenv
-from google import genai
+import os
 
 load_dotenv()
 
 app = FastAPI()
 
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-
+client = Groq(
+    api_key=os.getenv("GROQ_API_KEY")
+)
 
 app.add_middleware(
     CORSMiddleware,
@@ -26,37 +29,40 @@ class MessageRequest(BaseModel):
     traits: str
     memory: str
 
-print("API KEY:", os.getenv("GEMINI_API_KEY"))
-
 
 @app.post("/generate")
 async def generate_message(data: MessageRequest):
+
+    prompt = f"""
+    Escreva uma mensagem emocional e curta para o Dia das Mães.
+
+    Nome da mãe: {data.motherName}
+    Autor: {data.userName}
+    Características: {data.traits}
+    Memória: {data.memory}
+
+    Regras:
+    - Máximo 300 caracteres
+    - Não inventar informações
+    - Tom carinhoso
+    - Português brasileiro
+    """
+
+    if not os.getenv("GROQ_API_KEY"):
+        return {"message": "Erro: API KEY não carregada"}
+
     try:
-        prompt = f"""
-        Escreva uma mensagem curta e emocional para o Dia das Mães.
+        response = client.chat.completions.create(
+            model="llama-3.1-8b-instant",
+            messages=[{"role": "user", "content": prompt}]
+    )
 
-        Nome da mãe: {data.motherName}
-        Autor: {data.userName}
-        Características: {data.traits}
-        Memória com a mãe: {data.memory}
+        generated_message = response.choices[0].message.content
 
-        Regras:
-        - máximo 300 caracteres
-        - não inventar informações
-        - escrever em português
-        """
-
-        response = client.models.generate_content(
-            model="gemini-2.0-flash",
-            contents=prompt
-        )
-
-        return {
-            "message": response.text
-        }
-
+    
+        return {"message": generated_message}
+    
     except Exception as e:
-        print("ERRO:", e)
-        return {
-            "message": "Erro ao gerar mensagem!!!!!!!!!!!!"
-        }
+        import traceback
+        traceback.print_exc()
+        return {"message": f"ERRO REAL: {str(e)}"}

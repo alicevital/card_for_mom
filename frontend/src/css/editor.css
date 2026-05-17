@@ -11,7 +11,7 @@
 
 body {
   min-height: 100vh;
-  background: #fff7f8;
+  background: rgb(240, 234, 234);
   font-family: 'Poppins', sans-serif;
   color: #333;
 }
@@ -30,7 +30,7 @@ body {
 .editor-panel {
   width: 45%;
   padding: 60px;
-  background: white;
+  background: rgb(240, 234, 234);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,7 +64,7 @@ body {
 /* DESCRIÇÃO */
 
 .step p {
-  color: #666;
+  color: #333;
   margin-bottom: 32px;
   line-height: 1.6;
 }
@@ -107,7 +107,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-  border-color: #ff6b81;
+  border-color: #f88d9d;
 }
 
 button {
@@ -115,7 +115,7 @@ button {
   padding: 18px;
   border: none;
   border-radius: 999px;
-  background: #ff6b81;
+  background: #f88d9d;
   color: white;
   font-size: 16px;
   font-weight: bold;
@@ -126,6 +126,21 @@ button {
 button:hover {
   transform: translateY(-3px);
   opacity: 0.9;
+}
+
+.back-button {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  text-decoration: none;
+  color: #f88d9d;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  opacity: 0.7;
 }
 
 .preview-panel {
@@ -170,7 +185,7 @@ button:hover {
 }
 
 .background-grid::-webkit-scrollbar-thumb {
-  background: #ff6b81;
+  background: #f88d9d;
   border-radius: 999px;
 }
 
@@ -228,7 +243,7 @@ button:hover {
 
 .card-content span {
   font-weight: 600;
-  color: #ff6b81;
+  color: #444;
 }
 
 .background-grid {
@@ -264,7 +279,7 @@ button:hover {
 
 
 .background-option.selected {
-  border-color: #ff6b81;
+  border-color: #f88d9d;
 }
 
 .editor-panel {
@@ -346,5 +361,5 @@ button:hover {
 }
 
 .avatar-option.selected {
-  border-color: #ff6b81;
+  border-color: #f88d9d;
 }

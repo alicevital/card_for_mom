@@ -200,7 +200,7 @@ function updatePreview() {
   const userName = document.getElementById("userName").value;
 
   document.getElementById("previewMotherName").innerText =
-    motherName || "Mamãe";
+    motherName || "Mãe";
 
   document.getElementById("previewUserName").innerText =
     userName ? `Com amor, ${userName}` : "Com amor.";
@@ -220,6 +220,22 @@ function nextStep() {
   }
 }
 
+async function downloadPDF() {
+  const card = document.querySelector(".card-preview");
+
+  const canvas = await html2canvas(card, {
+    scale: 2, // melhora qualidade
+  });
+
+  const imgData = canvas.toDataURL("image/png");
+
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF("landscape", "px", [canvas.width, canvas.height]);
+
+  pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
+
+  pdf.save("cartao-dia-das-maes.pdf");
+}
 
 // preview do fundo do card 
 

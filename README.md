@@ -4,22 +4,25 @@ Projeto desenvolvido durante minha participação na primeira edição do Hackat
 
 ### Tema: Dia das Mães
 
-## O projeto:
+## 1º O projeto:
 
 Uma plataforma web que utiliza inteligência artificial para criar cartões personalizados de Dia das Mães. O usuário descreve a mãe, lembranças, características, escolhe o background, escolhe um avatar personalizado opcionalmente para representar sua mãe e a IA faz uma mensagem linda para a mãe com a descrição do usuário, juntando tudo isso o cartão poderá ser salvo em pdf para ser enviado para a mamãe.
 
 Link do canva com os assets do projeto: 
 [https://canva.link/9yo8c4kff35gu4i](https://canva.link/9yo8c4kff35gu4i)
 
-## Tecnologias:
-
-- Frontend: HTML | CSS | JavaScript
-- Design: Canva
-- Backend: FastAPI
-- AI: Groq
+## 2º Tecnologias:
 
 
-## Funcionalidades:
+| Camada | Tecnologia |
+|---|---|
+| Frontend | HTML + CSS + JavaScript |
+| Arte | Canva |
+| Backend | FastAPI |
+| Deploy | Vercel + Render | 
+
+
+## 3º Funcionalidades:
 
 - Formulário com informações personalizadas sobre a mãe.
 
@@ -34,33 +37,47 @@ Link do canva com os assets do projeto:
 - Exportação: Download do cartão em PDF.
 
 
-## Etapas de criação: 
+## 4º Etapas de criação: 
 
-1 Etapa:
+1º Etapa:
 - Definição das tecnologias utilizadas no projeto, configuração inicial e busca por assets.
 
-2 Etapa:
+2º Etapa:
 
 - Criação do repositório remoto.
 
-3 Etapa:
+3º Etapa:
 - Inicio da criação das telas da aplicação: index.html e editor.html.
 
-4 Etapa: 
+4º Etapa: 
 - Criação de avatares pré-definidos para o usuário escolher qual se parece mais com a mãe e adicionar como decoração no cartão.
 
-6 Etapa:
+6º Etapa:
 - Validações para próximos passos da criação do cartão, tamanho de caracteres, texto adequado e etc.
 
-7 Etapa:
+7º Etapa:
 - Integração da biblioteca da Groq e Adição do backend para gerenciar as validações e a mensagem enviada pela Groq.
 
-8 Etapa:
+8º Etapa:
 - Melhoria do frontend com fonte 'Poppins', cores e responsividade.
 
-## Como Rodar o Projeto:
+9º Etapa:
+- Deploy do frontend no Vercel e do backend no render.
 
-###  1. Clonar o repositório:
+## 5º Como Rodar o Projeto:
+
+### Pré-requisitos:
+
+```bash
+Git (para clonar o repositório)
+Visual Studio Code ou outra IDE
+Python (versão 3.10 ou superior)
+pip (gerenciador de pacotes do Python)
+Conta na Groq
+Uma API Key válida da Groq
+```
+
+###  1. Clone o repositório:
 
 ```bash
 git clone https://github.com/alicevital/card_for_mom.git
@@ -89,7 +106,7 @@ pip install -r requirements.txt
 ```
 
 ### 5. Crie um arquivo .env e adicione uma api key de IA:
-Obs: Siga o exemplo da .env.sample para a chave ficar correta.
+Obs: Siga o exemplo da `.env.sample` para a chave ficar correta.
 
 ```bash
 touch .env
@@ -112,7 +129,7 @@ Abra o arquivo em um navegador:
 ```bash
 frontend/src/project/index.html
 ```
-## Sobre a LLM API que estou utilizando (GROQ)!
+## 6º Sobre a LLM API que estou utilizando (GROQ)!
 
 A geração de mensagens é feita utilizando a API da Groq, que permite acesso a modelos de linguagem como o LLaMA.
 No backend (FastAPI), foi criado um endpoint:
@@ -125,7 +142,7 @@ async def generate_message(data: MessageRequest):
 
 Esse endpoint recebe os dados fornecidos pelo usuário, essas informações são transformadas em um prompt e enviadas para a API da Groq, que retorna uma mensagem personalizada.
 
-## Como configurar a API na sua máquina:
+## 7º Como configurar a API na sua máquina:
 
 Para rodar o projeto localmente, é necessário utilizar sua própria API Key da Groq.
 

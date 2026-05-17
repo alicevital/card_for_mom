@@ -241,7 +241,7 @@ async function downloadPDF() {
 
 window.onload = () => {
   document.querySelector(".card-background").style.backgroundImage =
-    "url('../../assets/backgrounds/background1.png')";
+    "url('./assets/backgrounds/background1.png')";
 };
 
 async function generateMessage() {

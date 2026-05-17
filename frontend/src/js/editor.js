@@ -28,18 +28,6 @@ function showStep(stepNumber) {
   currentStep = stepNumber;
 }
 
-
-// PRÓXIMO STEP
-
-function nextStep() {
-
-  if (currentStep < 4) {
-    showStep(currentStep + 1);
-  }
-
-}
-
-
 // STEP ANTERIOR
 
 function previousStep() {

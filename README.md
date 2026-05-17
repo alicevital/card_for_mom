@@ -16,6 +16,7 @@ Link do canva com os assets do projeto:
 - Frontend: HTML | CSS | JavaScript
 - Design: Canva
 - Backend: FastAPI
+- AI: Groq
 
 
 ## Funcionalidades:
@@ -24,7 +25,7 @@ Link do canva com os assets do projeto:
 
 - Escolha de background do cartão.
 
-- Sistema de avatares pré-definidos opcionais para representação visual da mãe
+- Sistema de avatares pré-definidos opcionais para representação visual da mãe.
 
 - Geração de mensagem com IA: Baseada nos dados fornecidos pelo usuário.
 
@@ -43,19 +44,19 @@ Link do canva com os assets do projeto:
 - Criação do repositório remoto.
 
 3 Etapa:
-- Inicio da criação das telas da aplicação.
+- Inicio da criação das telas da aplicação: index.html e editor.html.
 
 4 Etapa: 
-- Foi decidido criar avatares pré-definidos para o usuário escolher qual se parece mais com a mãe e adicionar como decoração no cartão.
+- Criação de avatares pré-definidos para o usuário escolher qual se parece mais com a mãe e adicionar como decoração no cartão.
 
 6 Etapa:
 - Validações para próximos passos da criação do cartão, tamanho de caracteres, texto adequado e etc.
 
 7 Etapa:
-- Integração da biblioteca da openAI e Adição do backend para gerenciar as validações e a mensagem enviada pela openAI.
+- Integração da biblioteca da Groq e Adição do backend para gerenciar as validações e a mensagem enviada pela Groq.
 
 8 Etapa:
-- Melhoria do frontend com fonte, cores e responsividade.
+- Melhoria do frontend com fonte 'Poppins', cores e responsividade.
 
 ## Como Rodar o Projeto:
 
@@ -93,7 +94,7 @@ Obs: Siga o exemplo da .env.sample para a chave ficar correta.
 ```bash
 touch .env
 
-GEMINI_API_KEY=sua_chave_aqui
+GROQ_API_KEY=sua_chave_aqui
 ```
 
 ### 6. Rode o Servidor e entre na url:
@@ -111,3 +112,29 @@ Abra o arquivo em um navegador:
 ```bash
 frontend/src/project/index.html
 ```
+## Sobre a LLM API que estou utilizando (GROQ)!
+
+A geração de mensagens é feita utilizando a API da Groq, que permite acesso a modelos de linguagem como o LLaMA.
+No backend (FastAPI), foi criado um endpoint:
+
+```python
+@app.post("/generate")
+async def generate_message(data: MessageRequest):
+    return generated_message
+```
+
+Esse endpoint recebe os dados fornecidos pelo usuário, essas informações são transformadas em um prompt e enviadas para a API da Groq, que retorna uma mensagem personalizada.
+
+## Como configurar a API na sua máquina:
+
+Para rodar o projeto localmente, é necessário utilizar sua própria API Key da Groq.
+
+1. Crie uma conta grátis na Groq.
+
+2. Gere uma API KEY nova, você utilizará ela no código.
+
+3. Na pasta backend/, crie um arquivo chamado `.env` (assim como é ensinado no tutorial acima).
+
+4. utilizando o .env.sample como exemplo, cole a sua chave após o `=`.
+
+5. Após isso, seguindo o tutorial de como rodar o projeto, até você atingir o limite de tokens, poderá utilizar a IA a vontade.

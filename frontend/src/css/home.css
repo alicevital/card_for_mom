@@ -27,14 +27,18 @@ h1 {
   min-height: 85vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /*justify-content: center; */
   padding: 0 80px;
   gap: 40px;
+  /*text-align: center; */
+  justify-content: center;
 }
 
 .hero-text {
     flex: 1;
     font-family: Poppins;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .hero-text h1 {

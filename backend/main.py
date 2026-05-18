@@ -1,9 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-
 from groq import Groq
-
 from dotenv import load_dotenv
 import os
 
@@ -34,18 +32,20 @@ class MessageRequest(BaseModel):
 async def generate_message(data: MessageRequest):
 
     prompt = f"""
-    Escreva uma mensagem emocional e curta para o Dia das Mães.
+    Escreva uma mensagem divertida e curta para a minha mãe em homenagem ao dia das mães.
 
     Nome da mãe: {data.motherName}
     Autor: {data.userName}
-    Características: {data.traits}
-    Memória: {data.memory}
+    Características dela: {data.traits}
+    Memória com ela: {data.memory}
 
     Regras:
-    - Máximo 300 caracteres
-    - Não inventar informações
-    - Tom carinhoso
-    - Português brasileiro
+    - Máximo 300 caracteres.
+    - Não inventar informações.
+    - Tom carinhoso e divertido.
+    - Português brasileiro.
+    - Não adicione informações, escreva apenas a mensagem.
+    - Não assine a mensagem com meu nome.
     """
 
     if not os.getenv("GROQ_API_KEY"):

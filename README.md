@@ -15,6 +15,7 @@ Link do canva com os assets do projeto:
 
 Love U Mom: https://card-for-mom-beige.vercel.app/index.html  
 Backend Swagger: https://card-for-mom.onrender.com/docs
+Vídeo Demo: https://youtu.be/324VDMhvB9M
 
 ## 2º Tecnologias:
 

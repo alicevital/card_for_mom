@@ -11,6 +11,11 @@ Uma plataforma web que utiliza inteligência artificial para criar cartões pers
 Link do canva com os assets do projeto: 
 [https://canva.link/9yo8c4kff35gu4i](https://canva.link/9yo8c4kff35gu4i)
 
+### Acesse o projeto aqui!
+
+Love U Mom: https://card-for-mom-beige.vercel.app/index.html  
+Backend Swagger: https://card-for-mom.onrender.com/docs
+
 ## 2º Tecnologias:
 
 
